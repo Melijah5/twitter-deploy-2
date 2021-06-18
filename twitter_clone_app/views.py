@@ -91,4 +91,5 @@ def add_comment(request):
   user = User.objects.get(id=request.session['user_id'])
   tweet = Tweet.objects.get(id=tweet_id)
   Comment.objects.create(text=comment_text, user=user, tweet=tweet)
+  
   return redirect('/feed')
